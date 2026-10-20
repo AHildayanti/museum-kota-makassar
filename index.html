@@ -20,7 +20,7 @@
 <body>
   <header>
     <h1>Virtual Tour Museum Kota Makassar</h1>
-    <p class="intro">Geser untuk melihat sekitar. Klik ikon untuk berpindah ruangan atau melihat informasi.</p>
+    <p class="intro">Geser untuk melihat sekitar. Klik ikon untuk berpindah ruangan.</p>
   </header>
   <main><div id="panorama" aria-label="Interactive 360-degree museum tour"></div></main>
   <footer>Built with <span>Pannellum</span>, <span>Git</span> and <span>GitHub Pages</span>.</footer>
@@ -28,21 +28,21 @@
   <script>
     pannellum.viewer("panorama", {
       "default": {
-        "firstScene": "gerbang",
+        "firstScene": "pintu", // Pintu Masuk diatur sebagai tampilan pertama
         "sceneFadeDuration": 700,
         "autoLoad": true,
         "hfov": 110,
         "escapeHTML": true
       },
       "scenes": {
-        "gerbang": {
-          "title": "Gerbang Museum",
+        "pintu": {
+          "title": "Pintu Masuk Museum",
           "type": "equirectangular",
-          "panorama": "images/gerbang-museum.jpeg", 
+          "panorama": "images/pintu-masuk-museum.jpeg",
           "yaw": 0,
           "hotSpots": [
-            {"pitch": -5, "yaw": 14, "type": "scene", "text": "Ke Lobby", "sceneId": "lobby"},
-            {"pitch": 10, "yaw": -50, "type": "info", "text": "Selamat datang di Gerbang Museum Kota Makassar!"}
+            {"pitch": -6, "yaw": 30, "type": "scene", "text": "Masuk ke Lobby", "sceneId": "lobby"},
+            {"pitch": 8, "yaw": 3, "type": "info", "text": "Selamat datang di Pintu Masuk Museum Kota Makassar!"}
           ]
         },
         "lobby": {
@@ -51,20 +51,9 @@
           "panorama": "images/lobby-museum.jpeg",
           "yaw": 0,
           "hotSpots": [
-            {"pitch": -6, "yaw": 30, "type": "scene", "text": "Ke Pintu Masuk", "sceneId": "pintu"},
-            {"pitch": -6, "yaw": -110, "type": "scene", "text": "Kembali ke Gerbang", "sceneId": "gerbang"},
+            {"pitch": -6, "yaw": 30, "type": "scene", "text": "Ke Ruangan Pameran", "sceneId": "ruangan1"},
+            {"pitch": -6, "yaw": -110, "type": "scene", "text": "Kembali ke Pintu Masuk", "sceneId": "pintu"},
             {"pitch": 8, "yaw": 3, "type": "info", "text": "Area lobby utama museum."}
-          ]
-        },
-        "pintu": {
-          "title": "Pintu Masuk Museum",
-          "type": "equirectangular",
-          "panorama": "images/pintu-masuk-museum.jpeg",
-          "yaw": 0,
-          "hotSpots": [
-            {"pitch": -6, "yaw": 30, "type": "scene", "text": "Ke Ruangan 1", "sceneId": "ruangan1"},
-            {"pitch": -6, "yaw": -110, "type": "scene", "text": "Kembali ke Lobby", "sceneId": "lobby"},
-            {"pitch": 8, "yaw": 3, "type": "info", "text": "Pintu masuk pameran sejarah."}
           ]
         },
         "ruangan1": {
@@ -73,7 +62,7 @@
           "panorama": "images/ruangan1.jpeg",
           "yaw": 0,
           "hotSpots": [
-            {"pitch": -6, "yaw": -110, "type": "scene", "text": "Kembali ke Pintu Masuk", "sceneId": "pintu"},
+            {"pitch": -6, "yaw": -110, "type": "scene", "text": "Kembali ke Lobby", "sceneId": "lobby"},
             {"pitch": 8, "yaw": 3, "type": "info", "text": "Koleksi benda bersejarah di dalam ruangan."}
           ]
         }
